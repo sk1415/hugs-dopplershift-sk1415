@@ -9,6 +9,7 @@ These include:
 from __future__ import division
 
 import warnings
+
 import numpy as np
 
 
@@ -95,4 +96,3 @@ def get_wind_components(speed, wdir):
 
 def foo():
     pass
-	

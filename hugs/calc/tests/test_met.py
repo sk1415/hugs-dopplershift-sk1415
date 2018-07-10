@@ -8,8 +8,8 @@ from numpy.testing import assert_almost_equal, assert_array_almost_equal
 
 def test_speed():
     """Test calculating wind speed."""
-    u = np.array([4., 2.,0., 0.])
-    v = np.array([0.,2., 4., 0.])
+    u = np.array([4., 2., 0., 0.])
+    v = np.array([0., 2., 4., 0.])
 #    u = np.array([4., 2.,0., 0.])
 #    v = np.array([0.1,2., 4., 0.])
 
@@ -19,7 +19,6 @@ def test_speed():
     true_speed = np.array([4., 2 * s2, 4., 0.])
 
     assert_array_almost_equal(true_speed, speed, 4)
-#	return
 
 
 def test_scalar_speed():
@@ -42,10 +41,3 @@ def test_dir():
 #    true_dir = np.array([290., 225., 180., 270.])
 
     assert_array_almost_equal(true_dir, direc, 4)
-#	return
-
-
-#def test_warning_direction():
-#    """ Test that warning is raised when wind direction > 360. """
-#	with pytest.warns(UserWarning):
-#	    get_wind_components(3,480)
