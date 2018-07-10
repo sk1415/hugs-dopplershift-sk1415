@@ -10,6 +10,8 @@ def test_speed():
     """Test calculating wind speed."""
     u = np.array([4., 2.,0., 0.])
     v = np.array([0.,2., 4., 0.])
+#    u = np.array([4., 2.,0., 0.])
+#    v = np.array([0.1,2., 4., 0.])
 
     speed = get_wind_speed(u, v)
 
@@ -17,21 +19,33 @@ def test_speed():
     true_speed = np.array([4., 2 * s2, 4., 0.])
 
     assert_array_almost_equal(true_speed, speed, 4)
+#	return
 
 
 def test_scalar_speed():
     """Test wind speed with scalars."""
     s = get_wind_speed(-3., -4.)
     assert_almost_equal(s, 5., 3)
+#    assert_almost_equal(s, 5.1, 3)
 
 
 def test_dir():
     """Test calculating wind direction."""
     u = np.array([4., 2., 0., 0.])
     v = np.array([0., 2., 4., 0.])
+#    u = np.array([4., 2., 0., 0.])
+#    v = np.array([0.1, 2., 4., 0.])
 
     direc = get_wind_dir(u, v)
 
     true_dir = np.array([270., 225., 180., 270.])
+#    true_dir = np.array([290., 225., 180., 270.])
 
     assert_array_almost_equal(true_dir, direc, 4)
+#	return
+
+
+#def test_warning_direction():
+#    """ Test that warning is raised when wind direction > 360. """
+#	with pytest.warns(UserWarning):
+#	    get_wind_components(3,480)
