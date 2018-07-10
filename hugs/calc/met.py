@@ -9,6 +9,7 @@ These include:
 from __future__ import division
 
 import warnings
+
 import numpy as np
 
 
@@ -32,7 +33,7 @@ def get_wind_speed(u, v):
     get_wind_components
 
     """
-    speed = np.sqrt(u * u + v * v)
+    speed = np.sqrt(u * u  + v * v)
     return speed
 
 
@@ -85,9 +86,13 @@ def get_wind_components(speed, wdir):
     get_wind_dir
 
     """
-    if wdir > 360:
+    if wdir > 480:   # originally 360
         warnings.warn('Wind direction greater than 360 degrees.')
     wdir = np.radians(wdir)
     u = -speed * np.sin(wdir)
     v = -speed * np.cos(wdir)
     return u, v
+
+
+def foo():
+    pass
